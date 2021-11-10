@@ -37,12 +37,12 @@ modules:
     sources:
       - type: archive
         only-arches: [x86_64]
-        url: https://download.visualstudio.microsoft.com/download/pr/4880c5a4-9c22-47a7-b298-651f1294a385/795f7828d8684059705e625b33027f89/dotnet-sdk-6.0.100-rc.1.21458.32-linux-x64.tar.gz
-        sha512: 7a20c5ac3f8ae7a5a67b0ddc184e7eb845b57aacea65e42e451c51dd48afb8c854f25a879777f0067617bba131ad0c09fb395c62b3ec292915f9434213523463
+        url: https://download.visualstudio.microsoft.com/download/pr/17b6759f-1af0-41bc-ab12-209ba0377779/e8d02195dbf1434b940e0f05ae086453/dotnet-sdk-6.0.100-linux-x64.tar.gz
+        sha512: cb0d174a79d6294c302261b645dba6a479da8f7cf6c1fe15ae6998bc09c5e0baec810822f9e0104e84b0efd51fdc0333306cb2a0a6fcdbaf515a8ad8cf1af25b
       - type: archive
         only-arches: [aarch64]
-        url: https://download.visualstudio.microsoft.com/download/pr/18b0aaba-3d6c-4051-8694-eac3439d070d/a2848819e18f2e84657ddd4c98aee02d/dotnet-sdk-6.0.100-rc.1.21458.32-linux-arm64.tar.gz
-        sha512: b27bf9be0198f7fda3eee514c86758665b144e6fc7d2f3e43223e65f80dfc85a43bbc9f61a5e8dbda2e10ec193fafd2c208e64e2e98358f0c80ef6e349bd7c33
+        url: https://download.visualstudio.microsoft.com/download/pr/adcd9310-5072-4179-9b8b-16563b897995/15a7595966f488c74909e4a9273c0e24/dotnet-sdk-6.0.100-linux-arm64.tar.gz
+        sha512: e5983c1c599d6dc7c3c7496b9698e47c68247f04a5d0d1e3162969d071471297bce1c2fd3a1f9fb88645006c327ae79f880dcbdd8eefc9166fd717331f2716e7
 
   - name: scripts
     buildsystem: simple
