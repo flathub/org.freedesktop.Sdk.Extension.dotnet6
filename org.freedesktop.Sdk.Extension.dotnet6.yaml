@@ -39,10 +39,20 @@ modules:
         only-arches: [x86_64]
         url: https://download.visualstudio.microsoft.com/download/pr/17b6759f-1af0-41bc-ab12-209ba0377779/e8d02195dbf1434b940e0f05ae086453/dotnet-sdk-6.0.100-linux-x64.tar.gz
         sha512: cb0d174a79d6294c302261b645dba6a479da8f7cf6c1fe15ae6998bc09c5e0baec810822f9e0104e84b0efd51fdc0333306cb2a0a6fcdbaf515a8ad8cf1af25b
+        x-checker-data:
+          type: html
+          url: https://dotnetcli.blob.core.windows.net/dotnet/Sdk/6.0/latest.version
+          version-pattern: "^([\\d\\.a-z-]+)$"
+          url-template: "ihttps://dotnetcli.blob.core.windows.net/dotnet/Sdk/$version/dotnet-sdk-$version-linux-x64.tar.gz"
       - type: archive
         only-arches: [aarch64]
         url: https://download.visualstudio.microsoft.com/download/pr/adcd9310-5072-4179-9b8b-16563b897995/15a7595966f488c74909e4a9273c0e24/dotnet-sdk-6.0.100-linux-arm64.tar.gz
         sha512: e5983c1c599d6dc7c3c7496b9698e47c68247f04a5d0d1e3162969d071471297bce1c2fd3a1f9fb88645006c327ae79f880dcbdd8eefc9166fd717331f2716e7
+        x-checker-data:
+          type: html
+          url: https://dotnetcli.blob.core.windows.net/dotnet/Sdk/6.0/latest.version
+          version-pattern: "^([\\d\\.a-z-]+)$"
+          url-template: "ihttps://dotnetcli.blob.core.windows.net/dotnet/Sdk/$version/dotnet-sdk-$version-linux-arm64.tar.gz"
 
   - name: scripts
     buildsystem: simple
