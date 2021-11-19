@@ -43,7 +43,7 @@ modules:
           type: html
           url: https://dotnetcli.blob.core.windows.net/dotnet/Sdk/6.0/latest.version
           version-pattern: "^([\\d\\.a-z-]+)$"
-          url-template: "ihttps://dotnetcli.blob.core.windows.net/dotnet/Sdk/$version/dotnet-sdk-$version-linux-x64.tar.gz"
+          url-template: "https://dotnetcli.blob.core.windows.net/dotnet/Sdk/$version/dotnet-sdk-$version-linux-x64.tar.gz"
       - type: archive
         only-arches: [aarch64]
         url: https://download.visualstudio.microsoft.com/download/pr/adcd9310-5072-4179-9b8b-16563b897995/15a7595966f488c74909e4a9273c0e24/dotnet-sdk-6.0.100-linux-arm64.tar.gz
@@ -52,7 +52,7 @@ modules:
           type: html
           url: https://dotnetcli.blob.core.windows.net/dotnet/Sdk/6.0/latest.version
           version-pattern: "^([\\d\\.a-z-]+)$"
-          url-template: "ihttps://dotnetcli.blob.core.windows.net/dotnet/Sdk/$version/dotnet-sdk-$version-linux-arm64.tar.gz"
+          url-template: "https://dotnetcli.blob.core.windows.net/dotnet/Sdk/$version/dotnet-sdk-$version-linux-arm64.tar.gz"
 
   - name: scripts
     buildsystem: simple
