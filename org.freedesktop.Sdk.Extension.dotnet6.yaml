@@ -58,30 +58,22 @@ modules:
     buildsystem: simple
     build-commands:
       - 'mkdir -p /usr/lib/sdk/dotnet6/share/appdata'
-      - 'cp enable.sh install.sh install-sdk.sh /usr/lib/sdk/dotnet6'
+      - 'cp install.sh install-sdk.sh /usr/lib/sdk/dotnet6/bin'
       - 'cp org.freedesktop.Sdk.Extension.dotnet6.appdata.xml ${FLATPAK_DEST}/share/appdata'
-      - 'mkdir -p /usr/lib/sdk/dotnet6/share/appdata'
       - 'appstream-compose --basename=org.freedesktop.Sdk.Extension.dotnet6 --prefix=${FLATPAK_DEST} --origin=flatpak org.freedesktop.Sdk.Extension.dotnet6'
     sources:
       - type: script
         commands:
-          - 'mkdir -p /app/dotnet6/{bin,lib}'
-          - 'cp -L /usr/lib/sdk/dotnet6/lib/libunwind{,-coredump,-$FLATPAK_ARCH}.so /app/dotnet6/lib'
-          - 'cp -r /usr/lib/sdk/dotnet6/lib/{dotnet,host,shared} /app/dotnet6/lib'
-          - 'ln -s /app/dotnet6/lib/dotnet /app/dotnet6/bin/dotnet'
+          - 'mkdir -p /app/lib/dotnet'
+          - 'mkdir -p /app/bin'
+          - 'cp -L /usr/lib/sdk/dotnet6/lib/libunwind{,-coredump,-$FLATPAK_ARCH}.so /app/lib/dotnet'
+          - 'cp -r /usr/lib/sdk/dotnet6/lib/{dotnet,host,shared} /app/lib/dotnet'
+          - 'ln -s /app/lib/dotnet/dotnet /app/bin/dotnet'
         dest-filename: install.sh
       - type: script
         commands:
-          - '/usr/lib/sdk/dotnet6/install.sh'
-          - 'cp -r /usr/lib/sdk/dotnet6/lib/sdk /app/dotnet6/lib'
+          - '/usr/lib/sdk/dotnet6/bin/install.sh'
+          - 'cp -r /usr/lib/sdk/dotnet6/lib/sdk /app/lib/dotnet'
         dest-filename: install-sdk.sh
-      - type: script
-        commands:
-          - 'export PATH=$PATH:/usr/lib/sdk/dotnet6/bin'
-          - 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/sdk/dotnet6/lib'
-          - 'export DOTNET_CLI_TELEMETRY_OPTOUT=true'
-          - 'export DOTNET_SKIP_FIRST_TIME_EXPERIENCE=true'
-          - 'export DOTNET_ROOT=/usr/lib/sdk/dotnet6/lib'
-        dest-filename: enable.sh
       - type: file
         path: org.freedesktop.Sdk.Extension.dotnet6.appdata.xml
