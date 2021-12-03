@@ -58,7 +58,8 @@ modules:
     buildsystem: simple
     build-commands:
       - 'mkdir -p /usr/lib/sdk/dotnet6/share/appdata'
-      - 'cp enable.sh install.sh install-sdk.sh /usr/lib/sdk/dotnet6/bin'
+      - 'cp install.sh install-sdk.sh /usr/lib/sdk/dotnet6/bin'
+      - 'cp enable.sh /usr/lib/sdk/dotnet6'
       - 'cp org.freedesktop.Sdk.Extension.dotnet6.appdata.xml ${FLATPAK_DEST}/share/appdata'
       - 'appstream-compose --basename=org.freedesktop.Sdk.Extension.dotnet6 --prefix=${FLATPAK_DEST} --origin=flatpak org.freedesktop.Sdk.Extension.dotnet6'
     sources:
