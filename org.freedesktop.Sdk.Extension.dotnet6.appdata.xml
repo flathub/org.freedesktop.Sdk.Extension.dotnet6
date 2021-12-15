@@ -12,7 +12,7 @@
   </description>
   <url type="homepage">https://dotnet.microsoft.com/</url>
   <releases>
-    <release version="6.0.101" date="2021-12-14"/>
+    <release version="6.0.101-rel" date="2021-12-14"/>
     <release version="6.0.100-rel" date="2021-11-08">
       <url type="details">https://github.com/dotnet/core/blob/main/release-notes/6.0/6.0.0/6.0.0.md?WT.mc_id=dotnet-35129-website</url>
       <description>
