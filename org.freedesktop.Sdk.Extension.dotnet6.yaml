@@ -46,8 +46,8 @@ modules:
           url-template: https://dotnetcli.blob.core.windows.net/dotnet/Sdk/$version/dotnet-sdk-$version-linux-x64.tar.gz
       - type: archive
         only-arches: [aarch64]
-        url: https://dotnetcli.blob.core.windows.net/dotnet/Sdk/6.0.414/dotnet-sdk-6.0.414-linux-arm64.tar.gz
-        sha256: 909f94b5814065811e6a57e9a8700ca11e9c412a4a240c79bbed8e9d146d14ab
+        url: https://dotnetcli.blob.core.windows.net/dotnet/Sdk/6.0.415/dotnet-sdk-6.0.415-linux-arm64.tar.gz
+        sha256: 127c7c69081a1e7a0e5c443becf5f7d7ea01ae1c9c0438dc8a498482fe39284e
         x-checker-data:
           type: html
           url: https://dotnetcli.blob.core.windows.net/dotnet/Sdk/6.0/latest.version
