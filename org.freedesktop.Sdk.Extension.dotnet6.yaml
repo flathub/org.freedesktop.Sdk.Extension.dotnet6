@@ -60,8 +60,7 @@ modules:
       - cp install.sh install-sdk.sh /usr/lib/sdk/dotnet6/bin
       - cp enable.sh /usr/lib/sdk/dotnet6
       - cp org.freedesktop.Sdk.Extension.dotnet6.appdata.xml ${FLATPAK_DEST}/share/appdata
-      - appstreamcli compose --basename=org.freedesktop.Sdk.Extension.dotnet6 --prefix=${FLATPAK_DEST}
-        --origin=flatpak org.freedesktop.Sdk.Extension.dotnet6
+      - appstreamcli compose --components=${FLATPAK_ID} --prefix=/ --origin=${FLATPAK_ID} --result-root=${FLATPAK_DEST} --data-dir=${FLATPAK_DEST}/share/app-info/xmls ${FLATPAK_DEST}
     sources:
       - type: script
         commands:
