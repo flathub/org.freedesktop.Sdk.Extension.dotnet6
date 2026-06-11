@@ -7,27 +7,6 @@ build-extension: true
 separate-locales: false
 appstream-compose: false
 modules:
-  - name: libunwind
-    rm-configure: true
-    build-options:
-      cflags: -fcommon
-      prefix: /usr/lib/sdk/dotnet6
-    cleanup:
-      - /include
-      - /pkgconfig
-      - '*.a'
-      - '*.la'
-      - '*ptrace.so*'
-      - '*setjmp.so*'
-    sources:
-      - type: archive
-        url: https://download.savannah.nongnu.org/releases/libunwind/libunwind-1.5.0.tar.gz
-        sha256: 90337653d92d4a13de590781371c604f9031cdb50520366aa1e3a91e1efb1017
-      - type: script
-        commands:
-          - autoreconf -sif
-        dest-filename: autogen.sh
-
   - name: dotnet-sdk
     buildsystem: simple
     build-commands:
