@@ -1,33 +1,12 @@
 app-id: org.freedesktop.Sdk.Extension.dotnet6
-branch: '23.08'
+branch: '24.08'
 runtime: org.freedesktop.Sdk
-runtime-version: '23.08'
+runtime-version: '24.08'
 sdk: org.freedesktop.Sdk
 build-extension: true
 separate-locales: false
 appstream-compose: false
 modules:
-  - name: libunwind
-    rm-configure: true
-    build-options:
-      cflags: -fcommon
-      prefix: /usr/lib/sdk/dotnet6
-    cleanup:
-      - /include
-      - /pkgconfig
-      - '*.a'
-      - '*.la'
-      - '*ptrace.so*'
-      - '*setjmp.so*'
-    sources:
-      - type: archive
-        url: https://download.savannah.nongnu.org/releases/libunwind/libunwind-1.5.0.tar.gz
-        sha256: 90337653d92d4a13de590781371c604f9031cdb50520366aa1e3a91e1efb1017
-      - type: script
-        commands:
-          - autoreconf -sif
-        dest-filename: autogen.sh
-
   - name: dotnet-sdk
     buildsystem: simple
     build-commands:
@@ -37,8 +16,8 @@ modules:
     sources:
       - type: archive
         only-arches: [x86_64]
-        url: https://dotnetcli.blob.core.windows.net/dotnet/Sdk/6.0.425/dotnet-sdk-6.0.425-linux-x64.tar.gz
-        sha256: c37613b327f29e2b32bf24e3ce0874787283fcc993e438cb2e3e50c9ebff6ade
+        url: https://dotnetcli.blob.core.windows.net/dotnet/Sdk/6.0.428/dotnet-sdk-6.0.428-linux-x64.tar.gz
+        sha256: 9b2f9b91e28677b58e47d34a1d9e2a88f597af1f6acd44764a3abc2f1bacdc8a
         x-checker-data:
           type: html
           url: https://dotnetcli.blob.core.windows.net/dotnet/Sdk/6.0/latest.version
@@ -46,8 +25,8 @@ modules:
           url-template: https://dotnetcli.blob.core.windows.net/dotnet/Sdk/$version/dotnet-sdk-$version-linux-x64.tar.gz
       - type: archive
         only-arches: [aarch64]
-        url: https://dotnetcli.blob.core.windows.net/dotnet/Sdk/6.0.425/dotnet-sdk-6.0.425-linux-arm64.tar.gz
-        sha256: 0a0a55ff636d82ea2ac9de803be24a454c4c7bec447ea2b1779501fe10aaab86
+        url: https://dotnetcli.blob.core.windows.net/dotnet/Sdk/6.0.428/dotnet-sdk-6.0.428-linux-arm64.tar.gz
+        sha256: b5956b0d9ab3063c2886ec74adc953394e81a1aa3f5075c6b41b3e4f1d7a53f9
         x-checker-data:
           type: html
           url: https://dotnetcli.blob.core.windows.net/dotnet/Sdk/6.0/latest.version
@@ -60,8 +39,6 @@ modules:
       - cp install.sh install-sdk.sh /usr/lib/sdk/dotnet6/bin
       - cp enable.sh /usr/lib/sdk/dotnet6
       - cp org.freedesktop.Sdk.Extension.dotnet6.appdata.xml ${FLATPAK_DEST}/share/appdata
-      - appstream-compose --basename=org.freedesktop.Sdk.Extension.dotnet6 --prefix=${FLATPAK_DEST}
-        --origin=flatpak org.freedesktop.Sdk.Extension.dotnet6
     sources:
       - type: script
         commands:
